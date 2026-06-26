@@ -1,0 +1,73 @@
+[
+    { "name": "Caffè", "name_en": "Espresso", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Caffè Deca", "name_en": "Decaf Espresso", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Caffè Americano", "name_en": "Americano", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Orzo / Ginseng Piccolo", "name_en": "Barley / Ginseng Small", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Orzo / Ginseng Grande", "name_en": "Barley / Ginseng Large", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Cappuccino", "name_en": "Cappuccino", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Cappuccino Vegetale", "name_en": "Vegan Cappuccino", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Latte Macchiato", "name_en": "Latte Macchiato", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Latte Macchiato Vegetale", "name_en": "Vegan Latte Macchiato", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Marocchino", "name_en": "Marocchino", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Caffè Corretto", "name_en": "Corrected Coffee", "desc": "", "desc_en": "", "price": "€2,00", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Caffè Shakerato", "name_en": "Shaken Coffee", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Té / Tisana", "name_en": "Tea / Herbal Tea", "desc": "", "desc_en": "", "price": "", "category": "caffetteria", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Brioche Farcita", "name_en": "Stuffed Brioche", "desc": "", "desc_en": "", "price": "€1,70", "category": "brioches", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Brioche Vuota", "name_en": "Plain Brioche", "desc": "", "desc_en": "", "price": "€1,50", "category": "brioches", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Brioche Farcita Piccola", "name_en": "Small Stuffed Brioche", "desc": "", "desc_en": "", "price": "€1,20", "category": "brioches", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Brioche Vuota Piccola", "name_en": "Small Plain Brioche", "desc": "", "desc_en": "", "price": "€1,00", "category": "brioches", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Biscottini", "name_en": "Pastry Selection", "desc": "da €1,20 a €2,00 (varia)", "desc_en": "from €1.20 to €2.00 (varies)", "price": "€1,20-2,00", "category": "brioches", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Acqua Naturale", "name_en": "Still Water", "desc": "", "desc_en": "", "price": "", "category": "bibite", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Acqua Gasata", "name_en": "Sparkling Water", "desc": "", "desc_en": "", "price": "", "category": "bibite", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Spremuta", "name_en": "Fresh Juice", "desc": "", "desc_en": "", "price": "", "category": "bibite", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Centrifuga", "name_en": "Centrifuge Juice", "desc": "", "desc_en": "", "price": "", "category": "bibite", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Coca Cola", "name_en": "Coca Cola", "desc": "", "desc_en": "", "price": "", "category": "bibite", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Fanta", "name_en": "Fanta", "desc": "", "desc_en": "", "price": "", "category": "bibite", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Extrahe", "name_en": "Extrahe", "desc": "", "desc_en": "", "price": "", "category": "bibite", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Suco", "name_en": "Suco", "desc": "", "desc_en": "", "price": "", "category": "bibite", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Crodino", "name_en": "Crodino", "desc": "", "desc_en": "", "price": "", "category": "bibite", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Spritz Aperol", "name_en": "Aperol Spritz", "desc": "", "desc_en": "", "price": "€9,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Spritz Campari", "name_en": "Campari Spritz", "desc": "", "desc_en": "", "price": "€9,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Gin Lemon", "name_en": "Gin Lemon", "desc": "", "desc_en": "", "price": "€10,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Gin Tonic Classico", "name_en": "Classic Gin Tonic", "desc": "Gordon's", "desc_en": "Gordon's", "price": "€10,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Gin Mare", "name_en": "Gin Mare", "desc": "", "desc_en": "", "price": "€12,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Hendricks", "name_en": "Hendricks", "desc": "", "desc_en": "", "price": "€12,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Tanqueray", "name_en": "Tanqueray", "desc": "", "desc_en": "", "price": "€12,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Negroni", "name_en": "Negroni", "desc": "", "desc_en": "", "price": "€10,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Sbagliato", "name_en": "Sbagliato", "desc": "", "desc_en": "", "price": "€10,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Americano", "name_en": "Americano", "desc": "", "desc_en": "", "price": "€10,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Mojito", "name_en": "Mojito", "desc": "", "desc_en": "", "price": "€10,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Moscow Mule", "name_en": "Moscow Mule", "desc": "", "desc_en": "", "price": "€10,00", "category": "cocktail", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Tagliere Solo Salumi", "name_en": "Cured Meat Platter", "desc": "", "desc_en": "", "price": "€7,00", "category": "taglieri", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Tagliere Solo Formaggi", "name_en": "Cheese Platter", "desc": "", "desc_en": "", "price": "€7,00", "category": "taglieri", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Tagliere Misto", "name_en": "Mixed Platter", "desc": "Salumi e formaggi", "desc_en": "Cured meats and cheeses", "price": "€9,00", "category": "taglieri", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Toast", "name_en": "Toast", "desc": "", "desc_en": "", "price": "€7,00", "category": "toast", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Panino", "name_en": "Sandwich", "desc": "", "desc_en": "", "price": "€5,90", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Zingara", "name_en": "Zingara", "desc": "crudo, bufala, pomodoro", "desc_en": "Parma ham, buffalo mozzarella, tomato", "price": "€5,90", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Padano", "name_en": "Padano", "desc": "crudo, grana, rucola, funghi", "desc_en": "Parma ham, grana, rocket, mushrooms", "price": "€5,90", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Delicato", "name_en": "Delicate", "desc": "cotto, brie, asparagi, maionese", "desc_en": "cooked ham, brie, asparagus, mayonnaise", "price": "€5,90", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Aspass", "name_en": "Aspass", "desc": "bresaola, brie, pomodoro, salsa rosa", "desc_en": "bresaola, brie, tomato, pink sauce", "price": "€5,90", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Porta Romana", "name_en": "Porta Romana", "desc": "speck, caprino, paté di olive, carciofini, rucola", "desc_en": "speck, goat cheese, olive pâté, artichokes, rocket", "price": "€5,90", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Coppa del Nonno", "name_en": "Grandpa's Coppa", "desc": "coppa, tonno, mozzarella, salsa del nonno", "desc_en": "coppa, tuna, mozzarella, grandpa's sauce", "price": "€5,90", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Ciccio Formaggio", "name_en": "Ciccio Formaggio", "desc": "mozzarella, brie, scamorza, caprino", "desc_en": "mozzarella, brie, scamorza, goat cheese", "price": "€5,90", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Naviglio", "name_en": "Naviglio", "desc": "tonno, mozzarella, pomodoro, insalata, salsa tonnata", "desc_en": "tuna, mozzarella, tomato, salad, tuna sauce", "price": "€5,90", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Fitness", "name_en": "Fitness", "desc": "pane integrale, fesa di tacchino, pomodoro, rucola, glassa di aceto balsamico", "desc_en": "whole wheat bread, turkey breast, tomato, rocket, balsamic glaze", "price": "€5,90", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Piadina", "name_en": "Piadina", "desc": "", "desc_en": "", "price": "€5,90", "category": "piadine", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Running", "name_en": "Running", "desc": "mozzarella, verdure grigliate, insalata, condimenti", "desc_en": "mozzarella, grilled vegetables, salad, dressings", "price": "€5,90", "category": "piadine", "allergens": "su richiesta", "allergens_en": "on request" },
+    { "name": "Panino con Cotoletta", "name_en": "Breaded Cutlet Sandwich", "desc": "cotoletta, fontina, insalata, pomodoro", "desc_en": "breaded cutlet, fontina, salad, tomato", "price": "€7,00", "category": "panini", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Insalatona", "name_en": "Large Salad", "desc": "", "desc_en": "", "price": "€7,00", "category": "insalate", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Primo del Giorno", "name_en": "Daily First Course", "desc": "", "desc_en": "", "price": "€8,50", "category": "primi", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Secondo del Giorno", "name_en": "Daily Main Course", "desc": "+ contorno", "desc_en": "+ side dish", "price": "€10,00", "category": "secondi", "allergens": "su richiesta", "allergens_en": "on request" },
+
+    { "name": "Piatto Unico", "name_en": "Single Dish", "desc": "primo + secondo + contorno", "desc_en": "first course + main course + side dish", "price": "€12,00", "category": "piatti_unici", "allergens": "su richiesta", "allergens_en": "on request" }
+]
