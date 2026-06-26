@@ -7,13 +7,12 @@ const categories = {
     brioches: { it: "Le Nostre Brioches", en: "Our Pastries", icon: "🥐", allergens: "glutine, lattosio, uova" },
     bibite: { it: "Bibite", en: "Soft Drinks", icon: "🥤", allergens: "" },
     aperitivi: { it: "Aperitivi & Taglieri", en: "Aperitifs & Platters", icon: "🍸", allergens: "solfiti, lattosio (nei formaggi)" },
-    panini: { it: "Panini & Toast", en: "Sandwiches & Toast", icon: "🥪", allergens: "glutine, lattosio" },
-    piadine: { it: "Piadine", en: "Piadinas", icon: "🫓", allergens: "glutine, lattosio" },
+    panini_piadine: { it: "Panini, Toast & Piadine", en: "Sandwiches, Toast & Piadinas", icon: "🥪", allergens: "glutine, lattosio" },
     insalate: { it: "Insalatone", en: "Salads", icon: "🥗", allergens: "su richiesta" },
     cucina: { it: "Cucina", en: "Kitchen", icon: "🍝", allergens: "glutine, lattosio, uova" }
 };
 
-const categoryOrder = ["caffetteria","brioches","bibite","aperitivi","panini","piadine","insalate","cucina"];
+const categoryOrder = ["caffetteria","brioches","bibite","aperitivi","panini_piadine","insalate","cucina"];
 
 const bgImages = {
     all: "aspass.jpg",
@@ -21,8 +20,7 @@ const bgImages = {
     brioches: "brioches.jpg",
     bibite: "bibite.jpg",
     aperitivi: "aperitivi.jpg",
-    panini: "panini.jpg",
-    piadine: "piadine.jpg",
+    panini_piadine: "panini.jpg",
     insalate: "insalate.jpg",
     cucina: "cucina.jpg"
 };
@@ -56,7 +54,7 @@ function getAverageColor(imgSrc, callback) {
         colorCache[imgSrc] = color;
         callback(color);
     };
-    img.onerror = function() { callback('#1a1008'); };
+    img.onerror = function() { callback('#f5ede4'); };
     img.src = imgSrc;
 }
 
@@ -162,7 +160,7 @@ function renderMenu() {
         }
         html += `</div></div>`;
     }
-    container.innerHTML = html || '<div style="padding:2rem;text-align:center;color:#c0a080">Nessun piatto in questa categoria</div>';
+    container.innerHTML = html || '<div style="padding:2rem;text-align:center;color:#a08060">Nessun piatto in questa categoria</div>';
 
     gsap.fromTo('.menu-section', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 });
     gsap.fromTo('.menu-item', { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.4, stagger: 0.08, delay: 0.3 });
@@ -176,8 +174,7 @@ function renderMenu() {
                 brioches: '🥐',
                 bibite: '🥤',
                 aperitivi: '🍸',
-                panini: '🥪',
-                piadine: '🫓',
+                panini_piadine: '🥪',
                 insalate: '🥗',
                 cucina: '🍝'
             };
@@ -256,7 +253,7 @@ class Particle {
         this.speedY = Math.random() * 0.4 + 0.05;
         this.speedX = (Math.random() - 0.5) * 0.2;
         this.opacity = Math.random() * 0.5 + 0.3;
-        this.color = Math.random() < 0.6 ? '212, 160, 80' : '232, 200, 138';
+        this.color = Math.random() < 0.6 ? '184, 115, 51' : '212, 160, 80';
     }
     update() {
         this.y -= this.speedY;
@@ -271,7 +268,7 @@ class Particle {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
         ctx.shadowBlur = 6;
-        ctx.shadowColor = `rgba(212, 160, 80, 0.5)`;
+        ctx.shadowColor = `rgba(212, 160, 80, 0.4)`;
         ctx.fill();
         ctx.shadowBlur = 0;
     }
@@ -308,7 +305,7 @@ document.getElementById('aperitivoBtn').addEventListener('click', function() {
     }
 
     const flash = document.createElement('div');
-    flash.style.cssText = 'position:fixed; inset:0; background:rgba(232,200,138,0.25); z-index:155; pointer-events:none;';
+    flash.style.cssText = 'position:fixed; inset:0; background:rgba(212,160,80,0.15); z-index:155; pointer-events:none;';
     document.body.appendChild(flash);
     gsap.fromTo(flash, { opacity: 0 }, { opacity: 0.6, duration: 0.3, yoyo: true, repeat: 1, onComplete: () => flash.remove() });
 
@@ -325,7 +322,7 @@ document.getElementById('aperitivoBtn').addEventListener('click', function() {
     }
 
     setTimeout(() => {
-        particles = particles.filter(p => p.color.includes('212') || p.color.includes('232'));
+        particles = particles.filter(p => p.color.includes('184') || p.color.includes('212'));
         while (particles.length < maxParticles) particles.push(new Particle());
         aperitivoActive = false;
     }, 4000);
@@ -396,7 +393,7 @@ async function loadAndInit() {
         }, 1500);
     } catch (error) {
         console.error('Errore nel caricamento del menu:', error);
-        document.getElementById('menuContainer').innerHTML = '<div style="padding:2rem;text-align:center;color:#d4a050">Errore nel caricamento del menu. Ricarica la pagina.</div>';
+        document.getElementById('menuContainer').innerHTML = '<div style="padding:2rem;text-align:center;color:#b87333">Errore nel caricamento del menu. Ricarica la pagina.</div>';
         setTimeout(() => {
             document.getElementById('splash').classList.add('hidden');
             document.body.classList.add('loaded');
