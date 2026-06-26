@@ -3,36 +3,28 @@ let lang = 'it';
 let currentFilter = 'all';
 
 const categories = {
-    caffetteria: { it: "☕ Caffetteria", en: "☕ Coffee & Tea", icon: "☕" },
-    brioches: { it: "🥐 Le Nostre Brioches", en: "🥐 Our Pastries", icon: "🥐" },
-    bibite: { it: "🥤 Bibite", en: "🥤 Soft Drinks", icon: "🥤" },
-    cocktail: { it: "🍸 Cocktail", en: "🍸 Cocktails", icon: "🍸" },
-    taglieri: { it: "🧀 Taglieri", en: "🧀 Platters", icon: "🧀" },
-    toast: { it: "🍞 Toast", en: "🍞 Toast", icon: "🍞" },
-    panini: { it: "🥪 Panini", en: "🥪 Sandwiches", icon: "🥪" },
-    piadine: { it: "🫓 Piadine", en: "🫓 Piadinas", icon: "🫓" },
-    insalate: { it: "🥗 Insalatone", en: "🥗 Salads", icon: "🥗" },
-    primi: { it: "🍝 Primi Piatti", en: "🍝 First Courses", icon: "🍝" },
-    secondi: { it: "🥩 Secondi Piatti", en: "🥩 Main Courses", icon: "🥩" },
-    piatti_unici: { it: "🍽️ Piatti Unici", en: "🍽️ Single Dishes", icon: "🍽️" }
+    caffetteria: { it: "Caffetteria", en: "Coffee & Tea", icon: "☕", allergens: "su richiesta" },
+    brioches: { it: "Le Nostre Brioches", en: "Our Pastries", icon: "🥐", allergens: "glutine, lattosio, uova" },
+    bibite: { it: "Bibite", en: "Soft Drinks", icon: "🥤", allergens: "" },
+    aperitivi: { it: "Aperitivi & Taglieri", en: "Aperitifs & Platters", icon: "🍸", allergens: "solfiti, lattosio (nei formaggi)" },
+    panini: { it: "Panini & Toast", en: "Sandwiches & Toast", icon: "🥪", allergens: "glutine, lattosio" },
+    piadine: { it: "Piadine", en: "Piadinas", icon: "🫓", allergens: "glutine, lattosio" },
+    insalate: { it: "Insalatone", en: "Salads", icon: "🥗", allergens: "su richiesta" },
+    cucina: { it: "Cucina", en: "Kitchen", icon: "🍝", allergens: "glutine, lattosio, uova" }
 };
 
-const categoryOrder = ["caffetteria","brioches","bibite","cocktail","taglieri","toast","panini","piadine","insalate","primi","secondi","piatti_unici"];
+const categoryOrder = ["caffetteria","brioches","bibite","aperitivi","panini","piadine","insalate","cucina"];
 
 const bgImages = {
     all: "aspass.jpg",
     caffetteria: "caffetteria.jpg",
     brioches: "brioches.jpg",
     bibite: "bibite.jpg",
-    cocktail: "cocktail.jpg",
-    taglieri: "taglieri.jpg",
-    toast: "toast.jpg",
+    aperitivi: "aperitivi.jpg",
     panini: "panini.jpg",
     piadine: "piadine.jpg",
     insalate: "insalate.jpg",
-    primi: "primi.jpg",
-    secondi: "secondi.jpg",
-    piatti_unici: "piatti_unici.jpg"
+    cucina: "cucina.jpg"
 };
 
 const colorCache = {};
@@ -120,22 +112,18 @@ function updateStaticTexts() {
     const headerSub = document.getElementById('headerSub');
     const splashSub = document.getElementById('splashSub');
     if (lang === 'it') {
-        footerAllergen.innerHTML = "Allergeni disponibili su richiesta. Chiedi al personale per dettagli.";
+        footerAllergen.innerHTML = "Allergeni indicati per categoria. Chiedi al personale per dettagli.";
         footerCopyright.innerHTML = "© Bar Aspass · Caffè e Cucina · dal 2024";
         creditSpan.innerHTML = 'Creato da <a href="https://www.iartservice.com" target="_blank">IArtService.com</a>';
         headerSub.innerText = "Caffè e Cucina · Aperitivi";
         splashSub.innerText = "Caffè e Cucina · Aperitivi";
     } else {
-        footerAllergen.innerHTML = "Allergens available on request. Ask staff for details.";
+        footerAllergen.innerHTML = "Allergens shown by category. Ask staff for details.";
         footerCopyright.innerHTML = "© Bar Aspass · Coffee & Food · since 2024";
         creditSpan.innerHTML = 'Created by <a href="https://www.iartservice.com" target="_blank">IArtService.com</a>';
         headerSub.innerText = "Coffee & Food · Aperitifs";
         splashSub.innerText = "Coffee & Food · Aperitifs";
     }
-}
-
-function getCategoryIcon(cat) {
-    return categories[cat]?.icon || "✨";
 }
 
 function renderMenu() {
@@ -145,20 +133,23 @@ function renderMenu() {
         const items = menuData.filter(i => i.category === cat);
         if (items.length === 0) continue;
         if (currentFilter !== 'all' && currentFilter !== cat) continue;
+        
         const sectionTitle = categories[cat][lang];
-        const icon = getCategoryIcon(cat);
+        const icon = categories[cat].icon;
+        const allergenText = categories[cat].allergens || '';
+        const allergenLabel = lang === 'it' ? 'Allergeni:' : 'Allergens:';
+        
         html += `<div class="menu-section" data-cat="${cat}">
-                    <div class="section-title">
-                        <span class="category-icon">${icon}</span>
-                        ${sectionTitle}
-                    </div>
-                    <div class="menu-list">`;
+                    <div class="section-title">${icon} ${sectionTitle}</div>`;
+        
+        if (allergenText) {
+            html += `<div class="allergens">⚠️ ${allergenLabel} ${allergenText}</div>`;
+        }
+        
+        html += `<div class="menu-list">`;
         for (let item of items) {
             const name = getText(item, 'name');
             const desc = getText(item, 'desc');
-            const allergenRaw = (lang === 'en' && item.allergens_en) ? item.allergens_en : (item.allergens || '');
-            const allergenLabel = lang === 'it' ? 'allergeni' : 'allergens';
-            const allergenHtml = allergenRaw ? `<div class="allergens">⚠️ ${allergenLabel}: ${allergenRaw}</div>` : '';
             const price = item.price || '';
             const priceClass = price ? '' : ' empty-price';
             const priceDisplay = price || (lang === 'it' ? 'prezzo su richiesta' : 'price on request');
@@ -166,7 +157,6 @@ function renderMenu() {
                         <div class="spotlight"></div>
                         <div class="item-name">${name}</div>
                         ${desc ? `<div class="item-desc">${desc}</div>` : ''}
-                        ${allergenHtml}
                         <div class="item-price${priceClass}">${priceDisplay}</div>
                      </div>`;
         }
@@ -177,7 +167,6 @@ function renderMenu() {
     gsap.fromTo('.menu-section', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 });
     gsap.fromTo('.menu-item', { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.4, stagger: 0.08, delay: 0.3 });
 
-    // Effetto click: emoji pertinente
     document.querySelectorAll('.menu-item').forEach(item => {
         item.addEventListener('click', function(e) {
             const cat = this.dataset.cat;
@@ -186,15 +175,11 @@ function renderMenu() {
                 caffetteria: '☕',
                 brioches: '🥐',
                 bibite: '🥤',
-                cocktail: '🍸',
-                taglieri: '🧀',
-                toast: '🍞',
+                aperitivi: '🍸',
                 panini: '🥪',
                 piadine: '🫓',
                 insalate: '🥗',
-                primi: '🍝',
-                secondi: '🥩',
-                piatti_unici: '🍽️'
+                cucina: '🍝'
             };
             emoji = icons[cat] || '✨';
             
@@ -206,19 +191,6 @@ function renderMenu() {
             el.style.fontSize = (Math.random() * 2 + 2) + 'rem';
             document.body.appendChild(el);
             setTimeout(() => el.remove(), 900);
-            
-            // Piccola scintilla in più
-            for (let i = 0; i < 3; i++) {
-                const spark = document.createElement('div');
-                spark.className = 'click-effect';
-                spark.textContent = ['✨','⭐','🌟'][i];
-                spark.style.left = (e.clientX + (Math.random() - 0.5) * 60) + 'px';
-                spark.style.top = (e.clientY + (Math.random() - 0.5) * 60) + 'px';
-                spark.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
-                spark.style.animationDuration = (Math.random() * 0.4 + 0.6) + 's';
-                document.body.appendChild(spark);
-                setTimeout(() => spark.remove(), 1000);
-            }
         });
     });
 }
@@ -317,7 +289,6 @@ function animateParticles() {
 }
 animateParticles();
 
-// Aperitivo Time - sostituisce Luna Park
 let aperitivoActive = false;
 document.getElementById('aperitivoBtn').addEventListener('click', function() {
     if (aperitivoActive) return;
@@ -360,7 +331,6 @@ document.getElementById('aperitivoBtn').addEventListener('click', function() {
     }, 4000);
 });
 
-// Scroll
 window.addEventListener('scroll', () => {
     const header = document.getElementById('mainHeader');
     if (window.scrollY > 40) header.classList.add('scrolled');
@@ -377,7 +347,6 @@ document.getElementById('langToggle').addEventListener('click', () => {
     updateLanguage();
 });
 
-// Parallax
 let lastScrollY = 0;
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
@@ -390,13 +359,11 @@ window.addEventListener('scroll', () => {
     lastScrollY = scrollY;
 });
 
-// Logo fallback
 document.getElementById('logoImg').onerror = function() {
     this.style.display = 'none';
     document.getElementById('logoFallback').style.display = 'block';
 };
 
-// Caricamento
 async function loadAndInit() {
     try {
         const response = await fetch('menu.json');
